@@ -141,54 +141,54 @@ void input_test_and_output() {
 
 void super_test(UE& ue, SF& sf) {
     int num_queries = 100, num_vertices = ue.getNumVertices();
-//    int max_weight = 5;
-//    random_device dev;
-//    mt19937 rng(dev());
-//    std::uniform_int_distribution<std::mt19937::result_type> distDiscrete(0, INT32_MAX - 1);
-//    int passed_queries = 0;
-//    for (int q = 0; q < num_queries; ++q) {
-//        int option = (int)distDiscrete(rng) % 3;
-//        if (option == 0) {
-//            // update
-////            int u, v;
-////            double w;
-////            u = (int)distDiscrete(rng) % num_vertices;
-////            v = (int)distDiscrete(rng) % num_vertices;
-////            w = (int)distDiscrete(rng) % max_weight + 1;
-////            cout << "Beginning Update: (" << u << ", " << v << ") to " << w << "\n";
-////            sf.update(u, v, w);
-////            ue.update(u, v, w);
-////            cout << "Finishing Update.\n";
-//            passed_queries++;
-//        }
-//        if (option == 1) {
-//            int u, v;
-//            u = (int)distDiscrete(rng) % num_vertices;
-//            v = (int)distDiscrete(rng) % num_vertices;
-//            cout << "Beginning Dist: (" << u << ", " << v << ") to \n";
-//            double sf_dist = sf.dist(u, v);
-//            double ue_dist = ue.dist(u, v);
-//            cout << "SF : " << sf_dist << "\n";
-//            cout << "UE : " << ue_dist << "\n";
-//            cout << "Finishing Dist.\n";
-//            if (sf_dist == ue_dist) passed_queries++;
-//        }
-//        if (option == 2) {
-//            int u, v;
-//            u = (int)distDiscrete(rng) % num_vertices;
-//            v = (int)distDiscrete(rng) % num_vertices;
-//            cout << "Beginning Dist: (" << u << ", " << v << ") to \n";
-//            vector<int> sf_path = sf.path(u, v);
-//            vector<int> ue_path = ue.path(u, v);
-//            cout << "SF : " << sf_path << "\n";
-//            cout << "UE : " << ue_path << "\n";
-//            cout << "Finishing Dist.\n";
-//            if (sf_path == ue_path) passed_queries++;
-//        }
-//    }
-//
-//    cout << "Passed " << passed_queries << "/" << num_queries << "\n";
-//    cout << "Final verdict: " << ((passed_queries == num_queries) ? "Passed test" : "Not Passed Test") << "\n";
+    int max_weight = 5;
+    random_device dev;
+    mt19937 rng(dev());
+    std::uniform_int_distribution<std::mt19937::result_type> distDiscrete(0, INT32_MAX - 1);
+    int passed_queries = 0;
+    for (int q = 0; q < num_queries; ++q) {
+        int option = (int)distDiscrete(rng) % 3;
+        if (option == 0) {
+            // update
+            int u, v;
+            double w;
+            u = (int)distDiscrete(rng) % num_vertices;
+            v = (int)distDiscrete(rng) % num_vertices;
+            w = (int)distDiscrete(rng) % max_weight + 1;
+            cout << "Beginning Update: (" << u << ", " << v << ") to " << w << "\n";
+            sf.update(u, v, w);
+            ue.update(u, v, w);
+            cout << "Finishing Update.\n";
+            passed_queries++;
+        }
+        if (option == 1) {
+            int u, v;
+            u = (int)distDiscrete(rng) % num_vertices;
+            v = (int)distDiscrete(rng) % num_vertices;
+            cout << "Beginning Dist: (" << u << ", " << v << ") to \n";
+            double sf_dist = sf.dist(u, v);
+            double ue_dist = ue.dist(u, v);
+            cout << "SF : " << sf_dist << "\n";
+            cout << "UE : " << ue_dist << "\n";
+            cout << "Finishing Dist.\n";
+            if (sf_dist == ue_dist) passed_queries++;
+        }
+        if (option == 2) {
+            int u, v;
+            u = (int)distDiscrete(rng) % num_vertices;
+            v = (int)distDiscrete(rng) % num_vertices;
+            cout << "Beginning Dist: (" << u << ", " << v << ") to \n";
+            vector<int> sf_path = sf.path(u, v);
+            vector<int> ue_path = ue.path(u, v);
+            cout << "SF : " << sf_path << "\n";
+            cout << "UE : " << ue_path << "\n";
+            cout << "Finishing Dist.\n";
+            if (sf_path == ue_path) passed_queries++;
+        }
+    }
+
+    cout << "Passed " << passed_queries << "/" << num_queries << "\n";
+    cout << "Final verdict: " << ((passed_queries == num_queries) ? "Passed test" : "Not Passed Test") << "\n";
 
     double sf_dist = sf.dist(3, 0);
     double ue_dist = ue.dist(3, 0);

@@ -9,8 +9,8 @@
 #include <unordered_set>
 using namespace std;
 
-template <class Os, class K>
-Os& operator<<(Os& os, const std::vector<K>& v) {
+    template <class Os, class K>
+    Os& operator<<(Os& os, const std::vector<K>& v) {
     for (const auto& e : v)
         os << e << " ";
     return os;
